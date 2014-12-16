@@ -1,0 +1,97 @@
+\section*{Chapter 4: Euclid's Algorithm}
+
+\paragraph{Exercise 4.4}
+Prove that, for any odd square number $x$, there is an even square number $y$
+such that $x+y$ is a square number.
+
+\begin{proof}
+Since $x$ is square and odd, there must be an $n \in \Nat$ such that
+$x = (2n+1)^2$. Let $y$ be some even square number. Thus, there must be an
+$m \in \Nat$ such that $y = (2m)^2$. It follows that
+\begin{eqnarray*}
+x+y &=& (2n+1)^2 + (2m)^2 \\
+    &=& 4(n^2 + m^2) + 4n + 1 
+\end{eqnarray*}
+We must define $m$ as a function of $n$ in such a way that this number conforms
+a square. In order to do this, let's see what happens for some small cases:
+\begin{itemize}
+    \item If $n = 1$, then $x = 9$. If we set $m = 2$, $y = 16$ and $x+y = 25$,
+    which is a square.
+    \item If $n = 2$, then $x = 25$. Taking $m = 6$, $y = 144$ and $x+y = 169$,
+    which is a square (since $13^2 = 169$).
+    \item If $n = 3$, then $x = 49$. Now, $m$ can be $12$, and then $y = 576$
+    and $x+y = 625 = 25^2$.
+\end{itemize}
+A careful analysis of these cases reveals a pattern: $m = n^2 + n$. Substituting
+this in the equation shown before,
+\begin{eqnarray*}
+x+y &=& 4(n^2 + m^2) + 4n + 1  \\
+    &=& 4(n^2 + (n^2 + n)^2) + 4n + 1 \\
+    &=& 4n^2 + 4(n^2 + n)^2 + 4n + 1 \\
+    &=& 4(n^2 + n)^2 + 4(n^2 + n) + 1 \\
+    &=& (2(n^2 + n) + 1)^2 \\
+\end{eqnarray*}
+\end{proof}
+
+
+\newsavebox\sqpython
+\begin{lrbox}{\sqpython}
+    \begin{minipage}[t]{3in}
+         \vspace{4px}
+         \begin{verbatim}
+def find_squares(x, y):
+    x1, x2 = x
+    y1, y2 = y
+    n = (x1**2 + x2**2)*(y1**2 + y2**2)
+    return [(i,j) for i in xrange(n)
+                  for j in xrange(i,n)
+                  if n == i**2 + j**2]
+         \end{verbatim}
+    \end{minipage}
+\end{lrbox}
+
+\paragraph{Exercise 4.5}
+Prove that, if $x$ and $y$ are both sums of two squares, then so is their
+product $xy$.
+
+\begin{proof}
+Being $x$ and $y$ both sums of two squares, we can write them like so:
+\begin{eqnarray*}
+    x &=& x_1^2 + x_2^2 \\
+    y &=& y_1^2 + y_2^2
+\end{eqnarray*}
+This implies that
+\begin{eqnarray*}
+    xy &=& (x_1^2 + x_2^2) \, (y_1^2 + y_2^2)  \\
+       &=& x_1^2 y_1^2 + x_1^2 y_2^2 + x_2^2 y_1^2 + x_2^2 y_2^2
+\end{eqnarray*}
+After several failed attempts at completing the squares (i.e., adding and
+subtracting the same thing), the following Python
+script was used to gain some insight into the underlying pattern of $xy$:
+    \begin{center}
+    \framebox[8.5cm]{
+    \usebox\sqpython}
+    \end{center}
+For example, 
+\begin{itemize}
+    \item \texttt{find\_squares((2,3), (5,7))} $\rightarrow$ \texttt{[(1, 31), (11, 29)]}.
+    \item \texttt{find\_squares((1,2), (3,4))} $\rightarrow$ \texttt{[(2, 11), (5, 10)]}.
+\end{itemize}
+Playing with this script and guessing how to combine the elements in the input
+tuples in order to generate an output tuple $(z_1, z_2)$, the following
+pattern emerged: 
+\begin{eqnarray*}
+    z_1 &=& x_2 y_1 + x_1 y_2  \\
+    z_2 &=& x_2 y_2 - x_1 y_1
+\end{eqnarray*}
+Indeed,
+\begin{eqnarray*}
+    z_1^2 + z_2^2 &=& (x_2 y_1 + x_1 y_2)^2 + (x_2 y_2 - x_1 y_1)^2  \\
+                  &=& ((x_2 y_1)^2 + (x_1 y_2)^2 + 2 x_2 y_1 x_1 y_2)
+                      + ((x_2 y_2)^2 + (x_1 y_1)^2 - 2 x_2 y_2 x_1 y_1) \\
+                  &=& x_2^2 y_1^2 + x_1^2 y_2^2 + x_2^2 y_2^2 + x_1^2 y_1^2 \\
+                  &=& x_1^2 y_1^2 + x_1^2 y_2^2 + x_2^2 y_1^2 + x_2^2 y_2^2 \\
+                  &=& xy
+\end{eqnarray*}
+
+\end{proof}
