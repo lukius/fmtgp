@@ -10,7 +10,7 @@
 **Chapter 6: Abstraction in Mathematics**
 
 **Chapter 7: Deriving a Generic Algorithm**
-  - [X] Exercise 7.2: Implement Fibonacci numbers using owe`r(code for solving arbitrary linear recurrences also provided).
+  - [X] Exercise 7.2: Implement Fibonacci numbers using `power` (code for solving arbitrary linear recurrences also provided).
 
 **Chapter 8: More Algebraic Structures**
   - [X] Exercise 8.7: Compute the transitive closure of a graph using matrix multiplication on boolean semirings.
