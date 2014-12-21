@@ -15,5 +15,8 @@
 **Chapter 8: More Algebraic Structures**
   - [X] Exercise 8.7: Compute the transitive closure of a graph using matrix multiplication on boolean semirings.
   - [X] Exercise 8.8: Compute shortest paths on a graph using matrix multiplication on tropical semirings.
+
+**Chapter 11: Permutation Algorithms**
+  - [X] Exercise 11.1: Prove Cayley's theorem.
  
 

@@ -1,0 +1,38 @@
+\section*{Chapter 11: Permutation Algorithms}
+
+\paragraph{Exercise 11.1}
+Prove \textsl{Cayley's theorem}: Any group $G$ is isomorphic to a subgroup of
+the symmetric group on $G$, \Sym{G}.
+
+\begin{proof}
+
+For any $a \in G$, consider the following function $F_a: G \rightarrow G$:
+$$F_a(x) = a x$$
+\begin{itemize}
+    \item $F_a$ is one-to-one, since $F_a(x) = a x = a y = F_a(y)$ implies 
+    that $x = y$ (left multiplying by \Inv{a}).
+    \item $F_a$ is onto: for a given $y \in G$, $F_a(\Inv{a} y) = a (\Inv{a} y)
+    = (a \Inv{a}) y = y$.
+\end{itemize}
+Thus, $F_a$ is a bijection on $G$, which in turn means that $F_a$ is a permutation
+of the elements in $G$. Thus, $S = \{ F_a \, / \, a \in G \}$ is a subset of \Sym{G}.
+Moreover, $S$ is a subgroup of \Sym{G}:
+\begin{itemize}
+    \item $S$ contains the identity permutation: $F_{\Id{G}}(x) = \Id{G} \, x = x$.
+    \item $S$ is closed by composition: $(F_a \circ F_b)(x) = F_a(F_b(x)) = a (b x)
+    = (a b) x = F_{ab}(x)$.
+    \item $S$ is closed by inverses: $\Inv{F_a} = F_{\Inv{a}}$, since
+    $(F_a \circ F_{\Inv{a}})(x) = a (\Inv{a} x) = x$.
+\end{itemize}
+Let $\mathcal{F} : G \rightarrow S$  be a function defined as follows:
+$$\mathcal{F}(a) = F_a$$
+Then, $\mathcal{F}$ is a group isomorphism from $G$ to $S$:
+\begin{itemize}
+    \item $\mathcal{F}(ab) = F_{ab} = F_a \circ F_b =
+    \mathcal{F}(a) \circ \mathcal{F}(b)$, using that $S$ is closed by composition.
+    \item $\mathcal{F}$ is one-to-one, since $\mathcal{F}(a) = \mathcal{F}(b)$
+    implies that $F_a(x) = a x = b x = F_b(x)$, and so $a = b$ after right
+    multiplying by \Inv{x}.
+    \item $\mathcal{F}$ is onto, since for a given $F_a \in S$, $\mathcal{F}(a) = F_a$.
+\end{itemize}
+\end{proof}
