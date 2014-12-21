@@ -9,9 +9,12 @@ CFLAGS=-Wall -std=c++11 -I$(INCLUDE_DIR)
 INCLUDES=$(wildcard $(INCLUDE_DIR)/*.h)
 
 
-all: $(BIN_DIR) power linear_rec
+all: $(BIN_DIR) power matrix_power linear_rec
 
 power: $(SRC_DIR)/power/power.o $(BIN_DIR)
+	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
+
+matrix_power: $(SRC_DIR)/matrix_power/matrix_power.o $(BIN_DIR)
 	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
 
 linear_rec: $(SRC_DIR)/linear_rec/linear_rec.o $(BIN_DIR)

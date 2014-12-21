@@ -2,6 +2,7 @@
 #include <vector>
 #include "power.h"
 #include "matrix.h"
+#include "matrix_ops.h"
 using namespace std;
 
 
@@ -29,15 +30,17 @@ int linear_recurrence_seq(size_t n, const vector<int> &coefficients,
                           const vector<int> &initial_values)
 {
     Matrix<int,k,k> coef_matrix = coef_matrix_from<k>(coefficients);
+    PlusTimes<int> plus_times;
+    MatrixMultiplication<int,PlusTimes<int>,k> k_k_mult(plus_times);
+    MatrixMultiplication<int,PlusTimes<int>,k,k,1> k_1_mult(plus_times);
 
     Matrix<int,k,1> iv_matrix;
     for(size_t i = 0; i < k; ++i)
         iv_matrix(i,0) = initial_values[k-i-1];
 
     Matrix<int,k,k> coef_pow = power_monoid(coef_matrix, n-k+1,
-                                            MatrixMultiplication<k>());
-    Matrix<int,k,1> result = MatrixMultiplication<k,k,1>()(coef_pow,
-                                                           iv_matrix);
+                                            k_k_mult);
+    Matrix<int,k,1> result = k_1_mult(coef_pow, iv_matrix);
 
     return result(0,0);
 }
