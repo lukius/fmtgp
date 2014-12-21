@@ -55,7 +55,8 @@ struct MatrixMultiplication
     MatrixMultiplication(Operation op) : _operation(op) {};
 
     // Traditional matrix multiplication running in cubic time.
-    // Might implement Strassen later.
+    // Might implement Strassen later (but... won't work for
+    // min-plus matrix multiplication)
     Matrix<N,n,l> operator()(Matrix<N,n,m> m1, Matrix<N,m,l> m2)
     {
         Matrix<N,n,l> prod;
