@@ -6,31 +6,24 @@ CC=g++
 RM=rm -rf
 MKDIR=mkdir -p
 CFLAGS=-Wall -std=c++11 -I$(INCLUDE_DIR)
+LDFLAGS=-lgmpxx -lgmp
 INCLUDES=$(wildcard $(INCLUDE_DIR)/*.h)
 
+TARGETS=power matrix_power linear_rec iter num
 
-all: $(BIN_DIR) power matrix_power linear_rec iter
+define DEF_TARGET
 
-iter: $(SRC_DIR)/iter/iter.o $(BIN_DIR)
-	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
+$(1): $(SRC_DIR)/$(1)/$(1).cpp $(BIN_DIR)
+	$(CC) $(CFLAGS) $(SRC_DIR)/$(1)/$(1).cpp -o $(BIN_DIR)/$(1) $(LDFLAGS)
 
-power: $(SRC_DIR)/power/power.o $(BIN_DIR)
-	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
+endef
 
-matrix_power: $(SRC_DIR)/matrix_power/matrix_power.o $(BIN_DIR)
-	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
+all: $(BIN_DIR) $(TARGETS)
 
-linear_rec: $(SRC_DIR)/linear_rec/linear_rec.o $(BIN_DIR)
-	$(CC) $(CFLAGS) $< -o $(BIN_DIR)/$@
+$(foreach TARGET,$(TARGETS),$(eval $(call DEF_TARGET,$(TARGET))))
 
 $(BIN_DIR):
 	$(MKDIR) $@
-
-$(BIN_DIR)/%: $(SRC_DIR)/%/%.o
-	$(CC) $(CFLAGS) $^ -o $@
-
-%.o: %.cpp $(INCLUDES)
-	$(CC) -c $(CFLAGS) $< -o $@
 
 clean:
 	$(RM) $(BIN_DIR)/*
