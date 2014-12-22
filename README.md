@@ -20,5 +20,5 @@
   - [X] Exercise 11.1: Prove Cayley's theorem.
   - [X] Exercise 11.2: What is the order of Sn?
   - [X] Exercise 11.3: Prove that if n > 2, Sn is not abelian.
- 
+  - [X] Exercise 11.5: Design an in-place reverse algorithm for forward iterators.
 
