@@ -9,6 +9,11 @@ using namespace std;
 
 // In-place reverse iterator for arbitrary forward iterators.
 // Not sure if qualifies as valid answer for exercise 11.5, though.
+//   * Has constant space complexity, as required.
+//   * Works for any forward iterator (the constructor might be
+//     refactored in order to receive two iterators for a given
+//     bounded range instead of the container itself).
+//   * ...but the operator++ has linear time complexity :(
 template<typename T>
 class ReverseIterator : public iterator<forward_iterator_tag,
                                         typename T::value_type>
@@ -60,7 +65,7 @@ int main(int argc, char *argv[])
     for(int i = 5; i > 0; --i)
         list.push_front(i);
 
-    cout << "Reversing list [1,2,3,4,5] using an in-place reverse iteator..."
+    cout << "Reversing list [1,2,3,4,5] using an in-place reverse iterator..."
          << endl;
 
     ReverseIterator<forward_list<int> > iter(list);
