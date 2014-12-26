@@ -9,7 +9,7 @@ CFLAGS=-Wall -std=c++11 -I$(INCLUDE_DIR)
 LDFLAGS=-lgmpxx -lgmp
 INCLUDES=$(wildcard $(INCLUDE_DIR)/*.h)
 
-TARGETS=power matrix_power linear_rec iter num
+TARGETS=power matrix_power linear_rec iter num egcd
 
 define DEF_TARGET
 

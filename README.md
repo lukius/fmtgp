@@ -22,6 +22,9 @@
   - [X] Exercise 11.3: Prove that if n > 2, Sn is not abelian.
   - [X] Exercise 11.5: Design an in-place reverse algorithm for forward iterators.
 
+**Chapter 12: Extensions of GCD**
+  - [X] Exercise 12.7: Develop a version of the extended GCD algorithm based on Stein's algorithm.
+
 **Chapter 13: A Real-World Application**
   - [X] Exercise 13.1: Implement the function `bool is_carmichael(n)`.
   - [X] Exercise 13.2: Find the first seven Carmichael numbers using your function.
