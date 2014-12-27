@@ -55,7 +55,7 @@ three_uple<N> stein_egcd(N m, N n)
     // system, which solves to (k -k+1) for some k. At the very end of 
     // the algorithm, we have that m' == n', and taking x' = k and
     // y' = 1-k (or viceversa) solves m'x' + n'y' = d = m'. Thus, the idea
-    // is to solve a k that solves this linear system in such a way that the
+    // is to find a k that solves this linear system in such a way that the
     // solution has integer coefficients.
     // 
     // Since k is brute-forced, the algorithm is not efficient at all. In fact,

@@ -1,0 +1,61 @@
+\section*{Chapter 12: Extensions of GCD}
+
+\paragraph{Exercise 12.2}
+\begin{enumerate}
+    \item Prove that an ideal $I$ is closed under subtraction.
+    \item Prove that $I$ contains $0$.
+\end{enumerate}
+
+\begin{proof}  
+$ $\newline
+\vspace{-0.1in}
+\begin{enumerate}
+    \item
+    Let $R$ be the ring such that $I \subseteq R$. We know that
+    the additive inverse of $1$, $-1$, is in $R$. Let $x \in I$. Thus,
+    $-1 \, x = -x \in I$. Now, let $y \in I$. Then, $y - x = y + (-x)
+    \in I$. 
+
+    \item The first part of the previous argument shows that $I$ is closed
+    under additive inverses. Thus, given $x \in I$ (at least we have one
+    since $I$ is nonempty), $x + (-x) = x - x = 0 \in I$. 
+\end{enumerate}
+\end{proof}
+
+
+\paragraph{Exercise 12.3}
+Prove that all the elements of a linear combination ideal are divisible by
+any of the common divisors of $a$ and $b$.
+
+\begin{proof}  
+Let $I = \{xa + yb \, / \, x,y \in R \}$ be a linear combination ideal, 
+let $e = x_0 a + y_0 b \in I$ and let $d$ be a common divisor of $a$ and $b$.
+That is, $a = d q_1$ and $b = d q_2$. Thus,
+\begin{eqnarray*}
+    e &=& x_0 a + y_0 b \\
+      &=& x_0 (d q_1) + y_0 (d q_2) \\
+      &=& d (x_0 q_1 + y_0 q_2) \\
+      &=& d q
+\end{eqnarray*}
+In other words, $e$ is divisible by $d$.
+\end{proof}
+
+
+\paragraph{Exercise 12.4}
+Prove that any element in a principal ideal is divisible by the principal element.
+
+\begin{proof}  
+Follows immediately from the definition of principal ideal and principal element.
+\end{proof}
+
+
+\paragraph{Exercise 12.5}
+Using B\'ezout's identity, prove that if $p$ is prime, then any $0 < a <p$ has
+multiplicative inverse modulo $p$.
+
+\begin{proof}  
+Actually, this is an immediate corollary of the invertibility lemma: being $p$ 
+prime, any $0 < a < p$ is such that $\GCD{a}{p} = 1$. Thus, there exists an $x \in
+\Zn{p}$ such that $a x = x a = 1 \textrm{ mod } p$. An ad-hoc proof can be done
+using essentially the same argument that proves the inveritibility lemma. 
+\end{proof}

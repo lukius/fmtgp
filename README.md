@@ -23,6 +23,12 @@
   - [X] Exercise 11.5: Design an in-place reverse algorithm for forward iterators.
 
 **Chapter 12: Extensions of GCD**
+  - [X] Exercise 12.2: 
+        * Prove that an ideal `I` is closed under subtraction.
+        * Prove that `I` contains 0.
+  - [X] Exercise 12.3: Prove that all the elements of a linear combination ideal are divisible by any of the common divisors of `a` and `b`.
+  - [X] Exercise 12.4: Prove that any element in a principal ideal is divisible by the principal element.
+  - [X] Exercise 12.5: Using Bézout's identity, prove that if `p` is prime, then any 0 < `a` < `p` has multiplicative inverse modulo `p`. 
   - [X] Exercise 12.7: Develop a version of the extended GCD algorithm based on Stein's algorithm.
 
 **Chapter 13: A Real-World Application**
