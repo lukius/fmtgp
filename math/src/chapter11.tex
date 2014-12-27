@@ -57,3 +57,18 @@ $P_2 = (3 \, 1 \, 2 \, \dots \, n)$. Then,
 \end{itemize}
 Since $P_1 \circ P_2 \neq P_2 \circ P_1$, $S_n$ is not commutative.
 \end{proof}
+
+
+\paragraph{Exercise 11.9}
+Prove that if a rotation of $n$ elements has a trivial cycle, then it has $n$
+trivial cycles.
+
+\begin{proof}
+Let $\rho$ be an $n$ by $k$ rotation. That is,
+$$\rho = (k \MOD{n}, k+1 \MOD{n}, \dots, k+n-1 \MOD{n})$$
+Suppose that $\rho$ has a trivial cycle. This means that there is an
+$0 \leq i < n$ such that $i = k + i \MOD{n} \Rightarrow 
+k = 0 \MOD{n}$. Then, 
+$$\rho = (0 \MOD{n}, 1 \MOD{n}, \dots, n-1 \MOD{n})$$
+which means that $\rho$ does not move any element.
+\end{proof}

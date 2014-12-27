@@ -21,6 +21,7 @@
   - [X] Exercise 11.2: What is the order of Sn?
   - [X] Exercise 11.3: Prove that if n > 2, Sn is not abelian.
   - [X] Exercise 11.5: Design an in-place reverse algorithm for forward iterators.
+  - [X] Exercise 11.9: Prove that if a rotation of `n` elements has a trivial cycle, then it has `n` trivial cycles.
 
 **Chapter 12: Extensions of GCD**
   - [X] Exercise 12.2: 
