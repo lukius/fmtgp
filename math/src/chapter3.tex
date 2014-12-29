@@ -1,0 +1,36 @@
+\section*{Chapter 3: Ancient Greek Number Theory}
+
+\paragraph{Exercise 3.7}
+Prove that every even perfect number is a triangular number.
+
+\begin{proof}
+Let $k$ be an even perfect number. Then, by the Euclid-Euler theorem,
+$k = 2^{n-1} (2^n - 1)$ for some $n \in \Nat$, where $2^n - 1$ is prime.
+Thus,
+\begin{eqnarray*}
+k &=& 2^{n-1} (2^n - 1)\\
+  &=& (2^n - 1) (2^n / \, 2) \\
+  &=& \frac{(2^n - 1) 2^n}{2} \\
+  &=& \triangle_{2^n - 1}
+\end{eqnarray*}
+
+\end{proof}
+
+
+\paragraph{Exercise 3.8}
+Prove that the sum of the reciprocals of the divisors of a perfect number is
+always 2.
+
+\begin{proof}
+Let $n$ be a perfect number with divisors $d_1,\dots,d_k$. By definition of
+perfect number, we have that
+$$\DivSum{n} = d_1 + \dots + d_k = 2n$$
+which implies that 
+$$2 = \frac{d_1 + \dots + d_k}{n} = \frac{d_1}{n} + \dots + \frac{d_k}{n}$$
+Since $\Divides{d_i}{n}$, $1 \leq i \leq k$, $n = d_i q_i$. But
+$\Divides{q_i}{n}$ as well, and so $q_i = d_j$. Then, $d_i / n = 1 / d_j$.
+In consequence, every summand on the right-hand side of the previous equation
+can be rewritten as the reciprocal of some divisor of $n$, and so
+$$2 = \frac{d_1}{n} + \dots + \frac{d_k}{n} = \frac{1}{d_1} + \dots + \frac{1}{d_k}$$
+
+\end{proof}

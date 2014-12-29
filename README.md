@@ -1,6 +1,10 @@
 * This repository contains solutions -and related work- for some of the exercises presented in [From Mathematics to Generic Programming](http://www.amazon.com/Mathematics-Generic-Programming-Alexander-Stepanov/dp/0321942043). So far,
 
 
+**Chapter 3: Ancient Greek Number Theory**
+  - [X] Exercise 3.7: Prove that every even perfect number is a triangular number.
+  - [X] Exercise 3.8: Prove that the sum of the reciprocals of the divisors of a perfect number is always 2.
+
 **Chapter 4: Euclid's Algorithm**
   - [X] Exercise 4.4: Prove that, for any odd square number `x` there is an even square number `y` such that `x+y` is a square number.
   - [X] Exercise 4.5: Prove that, if `x` and `y` are both sums of two squares, then so is their product `xy`.
