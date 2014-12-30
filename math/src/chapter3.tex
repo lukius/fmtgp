@@ -1,5 +1,29 @@
 \section*{Chapter 3: Ancient Greek Number Theory}
 
+\paragraph{Exercise 3.6}
+Prove that if $n$ and $m$ are coprime, then $\DivSum{nm} = 
+\DivSum{n} \, \DivSum{m}$
+
+\begin{proof}
+Let the prime factorization of $nm$ be 
+$nm = p_1^{\alpha_1} \dots p_k^{\alpha_k}$.
+Being $\GCD{n}{m} = 1$, if $\Divides{p_i}{n}$ then $\NotDivides{p_i}{m}$
+(and viceversa), $1 \leq i \leq k$. In consequence, if the prime factorization
+of $n$ is $n = q_1^{\beta_1} \dots q_l^{\beta_l}$, then any $q_i$ cannot appear
+in the prime factorization of $m$. That is, if the prime
+factorization of $m$ is $m = r_1^{\gamma_1} \dots r_s^{\gamma_s}$, 
+then $q_i \neq r_j$, $1 \leq i \leq l$, $1 \leq j \leq s$. Thus,
+\begin{eqnarray*}
+\DivSum{nm} &=& \DivSum{p_1^{\alpha_1} \dots p_k^{\alpha_k}} \\
+            &=& \prod_{i = 1}^{k}{\frac{p_i^{\alpha_i + 1} - 1}{p_i - 1}} \\
+            &=& \prod_{i = 1}^{l}{\frac{q_i^{\beta_i + 1} - 1}{q_i - 1}} \,
+                \prod_{j = 1}^{s}{\frac{r_i^{\gamma_i + 1} - 1}{r_i - 1}} \\
+            &=& \DivSum{q_1^{\beta_1} \dots q_l^{\beta_l}} \,
+                \DivSum{r_1^{\gamma_1} \dots r_s^{\gamma_s}} \\
+            &=& \DivSum{n} \, \DivSum{m}
+\end{eqnarray*}
+\end{proof}
+
 \paragraph{Exercise 3.7}
 Prove that every even perfect number is a triangular number.
 

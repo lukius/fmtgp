@@ -2,6 +2,7 @@
 
 
 **Chapter 3: Ancient Greek Number Theory**
+  - [X] Exercise 3.6: Prove that if `n` and `m` are coprime, then `sigma(nm) = sigma(n) sigma(m)`.
   - [X] Exercise 3.7: Prove that every even perfect number is a triangular number.
   - [X] Exercise 3.8: Prove that the sum of the reciprocals of the divisors of a perfect number is always 2.
 
