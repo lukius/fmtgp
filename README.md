@@ -17,6 +17,7 @@
 **Chapter 6: Abstraction in Mathematics**
 
 **Chapter 7: Deriving a Generic Algorithm**
+  - [X] Exercise 7.1: How many additions are needed to compute `fib0(n)`?
   - [X] Exercise 7.2: Implement Fibonacci numbers using `power` (code for solving arbitrary linear recurrences also provided).
 
 **Chapter 8: More Algebraic Structures**

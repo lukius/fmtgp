@@ -1,0 +1,30 @@
+\section*{Chapter 7: Deriving a Generic Algorithm}
+
+\paragraph{Exercise 7.1}
+How many additions are needed to compute \texttt{fib0(n)}?
+
+\begin{proof}[Answer]
+Let $\alpha(n)$ be the number of additions needed to compute
+\texttt{fib0(}$n$\texttt{)}. $\alpha(n)$ can be characterized by
+the following recurrence relation:
+$$
+\alpha(n) = 
+\begin{cases}
+    0 & \textrm{if } n \leq 1 \\
+    1 + \alpha(n-1) + \alpha(n-2) & \textrm{if } n \geq 2
+\end{cases}
+$$
+
+It can be shown by induction on $n$ that $\alpha(n) = F_{n+1} - 1$.
+In fact, if $n \leq 1$, $\alpha(n) = 0 = F_{n+1} - 1$, since
+by definition $F_1 = F_2 = 1$. For $n \geq 2$,
+\begin{eqnarray*}
+\alpha(n)  &=& 1 + \alpha(n-1) + \alpha(n-2) \\
+           &=& 1 + (F_n - 1) + (F_{n-1} - 1) \\
+           &=& (F_n + F_{n-1}) - 1 \\
+           &=& F_{n+1} - 1
+\end{eqnarray*}
+Thus, the number of additions we seek is
+$\alpha(n) = F_{n+1} -1 \in \Theta(\varphi^n)$, where $\varphi$ is the 
+golden ratio.
+\end{proof}
