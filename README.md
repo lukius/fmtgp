@@ -7,6 +7,7 @@
   - [X] Exercise 3.8: Prove that the sum of the reciprocals of the divisors of a perfect number is always 2.
 
 **Chapter 4: Euclid's Algorithm**
+  - [X] Exercise 4.3: Prove that `sqrt_3(16) + sqrt_3(54) = sqrt_3(250)`.
   - [X] Exercise 4.4: Prove that, for any odd square number `x` there is an even square number `y` such that `x+y` is a square number.
   - [X] Exercise 4.5: Prove that, if `x` and `y` are both sums of two squares, then so is their product `xy`.
 

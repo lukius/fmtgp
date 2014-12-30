@@ -1,5 +1,21 @@
 \section*{Chapter 4: Euclid's Algorithm}
 
+\paragraph{Exercise 4.3}
+Prove that $\KthRoot{3}{16} + \KthRoot{3}{54} = \KthRoot{3}{250}$
+
+\begin{proof}
+$16 = 2^4$, $54 = 2 \cdot 3^3$ and $250 = 2 \cdot 5^3$. Then,
+\begin{eqnarray*}
+\KthRoot{3}{16} + \KthRoot{3}{54} &=& \KthRoot{3}{2^4} +
+                                      \KthRoot{3}{2 \cdot 3^3} \\
+                                  &=& 2 \KthRoot{3}{2} + 3 \KthRoot{3}{2} \\
+                                  &=& 5 \KthRoot{3}{2} \\
+                                  &=& \KthRoot{3}{5^3} \cdot \KthRoot{3}{2} \\
+                                  &=& \KthRoot{3}{2 \cdot 5^3} \\
+                                  &=& \KthRoot{3}{250}
+\end{eqnarray*}
+\end{proof}
+
 \paragraph{Exercise 4.4}
 Prove that, for any odd square number $x$, there is an even square number $y$
 such that $x+y$ is a square number.
