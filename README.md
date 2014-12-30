@@ -12,6 +12,7 @@
   - [X] Exercise 4.5: Prove that, if `x` and `y` are both sums of two squares, then so is their product `xy`.
 
 **Chapter 5: The Emergence of Modern Number Theory**
+  - [X] Exercise 5.1: Prove that if `n > 4` is composite, then `(n-1)!` is a multiple of `n`.
 
 **Chapter 6: Abstraction in Mathematics**
 
