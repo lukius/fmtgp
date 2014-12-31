@@ -15,6 +15,12 @@
   - [X] Exercise 5.1: Prove that if `n > 4` is composite, then `(n-1)!` is a multiple of `n`.
 
 **Chapter 6: Abstraction in Mathematics**
+  - [X] Exercise 6.3: Prove that any group has at least one element.
+  - [X] Exercise 6.4: What is the order of `e`? Prove that `e` is the only element of such order.
+  - [X] Exercise 6.5: Prove that if `a` is an element of order `n`, then `a^{-1} = a^{n-1}`.
+  - [X] Exercise 6.7: Prove that any subgroup of a cyclic group is cyclic.
+  - [X] Exercise 6.8: Prove that any cyclic group is abelian.
+  - [X] Exercise 6.10: Prove that every group of prime order is cyclic.
 
 **Chapter 7: Deriving a Generic Algorithm**
   - [X] Exercise 7.1: How many additions are needed to compute `fib0(n)`?

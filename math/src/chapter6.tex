@@ -1,0 +1,77 @@
+\section*{Chapter 6: Abstraction in Mathematics}
+
+\paragraph{Exercise 6.3}
+Prove that any group has at least one element.
+
+\begin{proof}
+Any group, by definition, has an identity element $e$.
+\end{proof}
+
+
+\paragraph{Exercise 6.4}
+What is the order of $e$? Prove that $e$ is the only element of such order.
+
+\begin{proof}[Answer]
+Let $G$ be a group with identity element $e$. The order of $e$ is 1 given that
+$e^1 = e$. Suppose that $x \in G$ has also order 1. Then, $x^1 = x = e$.
+\end{proof}
+
+
+\paragraph{Exercise 6.5}
+Prove that if $a$ is an element of order $n$, then $a^{-1} = a^{n-1}$.
+
+\begin{proof}
+We know that $a^n = a \, a^{n-1} = e$. Since inverses are unique, then
+it must be $a^{-1} = a^{n-1}$.
+\end{proof}
+
+
+\paragraph{Exercise 6.7}
+Prove that any subgroup of a cyclic group is cyclic.
+
+\begin{proof}
+Let $G$ be a cyclic group and $S$ a subgroup of $G$. Let $x$
+be a generator of $G$, and let
+$i_0 = \min{\{ i \leq |G| \, / \, x^i \in S \ \}}$.
+Consider the element $y = x^{i_0} \in S$, and suppose that its order
+$m$ is such that $m < |S|$. Then, let $z \in S$ be an element such that
+$z \neq y^j$. Being $x$ a generator of $G$, we have that $z = x^{j_0}$
+for some $j_0$. By the division algorithm, we can write $j_0$ as
+$j_0 = i_0 q + r$, for some $0 \leq r < i_0$. Then,
+\begin{eqnarray*}
+z &=& x^{j_0} \\
+  &=& x^{i_0 q + r} \\ 
+  &=& x^{i_0 q} \, x^r \\
+  &=& (x^{i_0})^q \, x^r \\
+  &=& y^q \, x^r
+\end{eqnarray*}
+This implies that $x^r = (y^q)^{-1} \, z \in S$, but this contradicts
+the minimality of $i_0$. Hence, such $z$ cannot exist, which proves that
+$y$ is a generator of $S$ and, consequently, that $S$ is cyclic. 
+\end{proof}
+
+
+\paragraph{Exercise 6.8}
+Prove that any cyclic group is abelian.
+
+\begin{proof}
+Let $G$ be a cyclic group, and let $x$ be a generator of $G$. Given 
+$a, b \in G$, we know that there exist $i, j \in \Nat$ such that
+$a = x^i$ and $b = x^j$. Then, using the fact that the group 
+operation is associative and that integer addition commutes,
+$$ab = x^i \, x^j = x^{i+j} = x^{j+i} = x^j \, x^i = ba$$
+\end{proof}
+
+
+\paragraph{Exercise 6.10}
+Prove that every group of prime order is cyclic.
+
+\begin{proof}
+Let $G$ be a group such that its order $p$ is prime. Since $p > 1$, 
+there must be at least one element in $G$ whose order is greater than 1.
+Let $x$ be one such element, and let $n$ be its order. The set 
+$S = \{x^i \, / \, 1 \leq i \leq n \}$ (equipped with $G$'s operation)
+is a subgroup of $G$, and so, by Lagrange's theorem,
+$\Divides{n = |S|}{|G| = p}$, which implies that $n = p$. Thus, $x$ 
+generates $G$.
+\end{proof}
