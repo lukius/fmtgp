@@ -7,9 +7,12 @@
 #define Integer typename
 #define SemigroupOperation typename
 #define MonoidOperation typename
+#define Field typename
+#define EuclideanDomain typename
 
-#define divides(k,n) (n % k == N(0))
-#define coprime(n,k) (gcd(n,k) == N(1))
+#define divides(k,n) (n % k == 0)
+#define coprime(n,k) (gcd(n,k) == 1)
+
 
 template<Integer N>
 bool odd(N n)
@@ -23,13 +26,12 @@ N half(N n)
     return n >> 1;
 }
 
-
-template<Integer N>
-N gcd(N a, N b)
+template<EuclideanDomain E>
+E gcd(E a, E b)
 {
-    while(b != N(0))
+    while(b != E(0))
     {
-        a %= b;
+        a = a % b;
         std::swap(a, b);
     }
     return a;
